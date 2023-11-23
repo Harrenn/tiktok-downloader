@@ -129,7 +129,7 @@ const getVideoNoWM = async (url) => {
 const getListVideoByUsername = async (username) => {
     var baseUrl = await generateUrlProfile(username)
     const browser = await puppeteer.launch({
-        headless: false, args: ['--no-sandbox', '--disable-setuid-sandbox']
+        headless: false, args: ['--no-sandbox', '--disable-gpu', '--disable-setuid-sandbox']
     })
     const page = await browser.newPage()
     page.setUserAgent(
